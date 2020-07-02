@@ -14,7 +14,7 @@ for (size_t i = 1; i < 6; i++)
                     }
                     else
                     {
-                        printf("*");
+                        printf("0");
                     }
                     
         }
