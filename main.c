@@ -136,9 +136,10 @@ void StrInput(char *array)
     char * write_to = GoToEmpty(array);
     char temp[255];
     fgets(temp,255,stdin);
+    fflush(stdin);
     *write_to = strlen(temp);
     write_to++;
-    for (size_t i = 0; i < strlen(temp); i++)
+    for (size_t i = 0; i < strlen(temp), i< N; i++)
     {
         write_to[i]=temp[i];
     }
@@ -161,7 +162,7 @@ char* GoToEmpty(char *array)
                 array+=*array;
             }
         }
-        if (*array = 0)
+        if (*array == 0)
         {
             return array;
         }
