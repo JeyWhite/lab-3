@@ -112,7 +112,7 @@ void Menu(char *array)
     {
         int choise;
         printf("1.Ввести строку \n 2. Отобразить все строки\n 0. Выход\n");
-        choise = getchar()-'0';
+        choise = getchar(stdin)-'0';
         switch(choise)
         {
              case 0:
@@ -134,9 +134,7 @@ void Menu(char *array)
 void StrInput(char *array)
 {
     char * write_to = GoToEmpty(array);
-    char temp[255];
-    fgets(temp,255,stdin);
-    fflush(stdin);
+    char temp[255] = GetFromUser();
     *write_to = strlen(temp);
     write_to++;
     for (size_t i = 0; i < strlen(temp), i< N; i++)
@@ -172,4 +170,21 @@ char* GoToEmpty(char *array)
             exit(1);
         }   
     }
+}
+
+char* GetFromUser()
+{
+    int i=0;
+    char temp[255];
+    char *ptr;
+    ptr=temp;
+    while(*ptr!=0||i<255)
+    {
+        ptr=getchar();
+        ptr++;
+        i++;
+    }
+
+    fflush(stdin);
+
 }
