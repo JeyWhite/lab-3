@@ -8,7 +8,7 @@
             "name": "(gdb) Запустить",
             "type": "cppdbg",
             "request": "launch",
-            "program": "Введите имя программы, например: ${workspaceFolder}/a.exe",
+            "program": "${workspaceFolder}/lab.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
